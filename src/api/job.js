@@ -1,9 +1,11 @@
 import axios from "axios";
 
+const BASE_URL = "http://localhost:3000/api/recruitments/positions";
+
 const list = async (payload) => {
   try {
     const result = await axios.get(
-      `http://localhost:3002/api/v1/jobs?full_time=${payload.fulltime}&description=${payload.description}&location=${payload.location}`
+      `${BASE_URL}?full_time=${payload.fulltime}&description=${payload.description}&location=${payload.location}`
     );
     return result.data;
   } catch (error) {
@@ -13,7 +15,7 @@ const list = async (payload) => {
 
 const findOne = async (id) => {
   try {
-    const result = await axios.get(`http://localhost:3002/api/v1/jobs/${id}`);
+    const result = await axios.get(`${BASE_URL}/${id}`);
     return result.data;
   } catch (error) {
     return error;
