@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000/api/recruitments/positions";
+const BASE_URL = "http://localhost:3000/api/recruitment/positions";
 
 const list = async (payload) => {
   try {
