@@ -14,9 +14,11 @@ const list = async (payload) => {
 };
 
 const findOne = async (id) => {
+  console.log(id);
   try {
     const result = await axios.get(`${BASE_URL}/${id}`);
-    return result.data;
+    console.log(result);
+    return result.data[0];
   } catch (error) {
     return error;
   }

@@ -8,7 +8,7 @@ import moment from "moment";
 export default function JobList() {
   const dispatch = useDispatch();
   const [filter, setFilter] = useState({
-    fulltime: false,
+    fulltime: true,
     description: "",
     location: "",
   });
@@ -66,6 +66,7 @@ export default function JobList() {
               <input
                 name="fulltime"
                 type="checkbox"
+                checked={filter.fulltime}
                 className="border border-black"
                 onChange={handleChange}
               />
@@ -91,7 +92,7 @@ export default function JobList() {
                   key={item.id}
                 >
                   <div>
-                    <Link to={item.id}>
+                    <Link to={`${item.id}`}>
                       <p className="text-blue-800 font-bold">{item.title}</p>
                     </Link>
                     <p className="font-light">
